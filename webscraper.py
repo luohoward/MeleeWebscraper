@@ -71,23 +71,28 @@ year = 2002
 for item in rows:
     if len(item.find_all("th")) != 0:
         year += 1
-        if year == 2018:
+        if year == 2019:
             break
 
         saveString += str(year) + "\n"
     else:
         value = ""
-        for subItem in item.find_all("td"):
-            if len(subItem.find_all('a')) != 0:
-                for link in subItem.find_all('a'):
-                    href = link.get('href')
-                    title = link.get('title')
-                    if ".png" in href or "/Smasher:" in href:
-                        continue
-                    else:
-                        s = parseSite(href).strip()
-                        if "(SSBM)" in s and 'Smasher:' in s:
-                            saveString += title + "\t" + parseSite(href).strip() + "\n"
+        if "TBD" in item.find_all("td")[-1].get_text():
+            break 
+        else:
+            for subItem in item.find_all("td"):
+                if len(subItem.find_all('a')) != 0:
+                    for link in subItem.find_all('a'):
+                        href = link.get('href')
+                        title = link.get('title')
+                        if ".png" in href or "/Smasher:" in href:
+                            continue
+                        else:
+                            s = parseSite(href).strip()
+                            if "(SSBM)" in s and 'Smasher:' in s:
+                                saveString += title + "\t" + parseSite(href).strip() + "\n"
+
+saveString = saveString.replace("Dr. PeePee", "PPMD") 
 
 f = codecs.open("tournamentResults.txt", 'w', encoding='utf8')
 f.write(saveString)
