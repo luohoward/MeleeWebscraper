@@ -1,11 +1,11 @@
-Ice Climbers:#eb36ca
-Peach:#7d2929
-Fox:#ed948f
-Captain Falcon:#3ddac5
-Sheik:#834892
-Marth:#4abcb5
-Young Link:#0d9420
-Jigglypuff:#d262fc
-Link:#c6c10e
-Mewtwo:#f78398
-Falco:#1705ac
+Ice Climbers:#44cb3d
+Peach:#d2064b
+Fox:#099106
+Captain Falcon:#309571
+Sheik:#d0be0c
+Marth:#2b4732
+Young Link:#9c20d4
+Jigglypuff:#cf6459
+Link:#2cc258
+Mewtwo:#53750f
+Falco:#35f6ec
